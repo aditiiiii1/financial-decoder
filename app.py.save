@@ -82,5 +82,17 @@ if uploaded_file is not None:
             model = genai.GenerativeModel("gemini-pro")
             response = model.generate_content(prompt)
             st.subheader("📑 AI-Generated Summary:")
-            st.success(response.text)
+            simport streamlit as st
+import google.generativeai as genai
+import pandas as pd
+import os
+from dotenv import load_dotenv
 
+# Load API Key
+load_dotenv()
+API_KEY = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=API_KEY)
+
+# Streamlit UI
+st.set_page_config(page_title="Financial Decoder AI", layout="wide")
+st.title("📊 Gemini Pro Fina
